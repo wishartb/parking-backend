@@ -20,7 +20,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
         // Create Stripe Session
         const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card', 'apple_pay', 'google_pay'], // Apple/Google pay work great on mobile
+            payment_method_types: ['card'], // Apple/Google pay work great on mobile
             line_items: [{
                 price_data: {
                     currency: 'usd',
